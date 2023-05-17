@@ -31,7 +31,7 @@ require 'fonction.php';
                 </div>
 
 
-
+<section>
 
 <?php
 $content = ob_get_clean();

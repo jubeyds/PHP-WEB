@@ -17,20 +17,20 @@
                         
                         </form>
                     </div>
-                </div>
+            </div>
 
 
 <section>
 
 <?php
 
-// Cette regex permet de valider une chaîne de caractères de 8 caractères 
+// Cette regex permet de valider une chaîne de caractères de 8 caractère 
 // contenant au moins une majuscule, une minuscule, un chiffre et un caractère spécial.
 
 $regex1 = '/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[\W_]).{8}$/';
 
-// Vérification de la soumission du formulaire
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+
     // Récupération de la valeur de l'identifiant depuis le formulaire
     $identifiant = isset($_POST['identifiant']) ? $_POST['identifiant'] : '';
 
@@ -42,13 +42,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // L'identifiant est invalide
         echo "L'identifiant $identifiant est invalide.";
     }
-}
+
 
 // ecrire un regex pour un mail
 $regex2 = '/^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/'; 
 
-// Vérification de la soumission du formulaire
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+
 //     Récupération de l'adresse email
     $email = isset($_POST['email']) ? $_POST['email'] : '';
 //     Validation de l'adresse email
@@ -59,7 +59,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 //         L'adresse email est invalide
         echo "L'adresse email $email est invalide.";
     }
-}
+
+
+//Cette ligne de code est une expression ternaire qui permet de vérifier si le champ de formulaire "identifiant" a été soumis via la méthode POST.
+
+// Voici comment cette expression ternaire fonctionne :
+
+// La fonction isset($_POST['identifiant']) vérifie si le champ "identifiant" a été soumis via une méthode POST. Si c'est le cas, cette fonction renvoie true. Si ce n'est pas le cas, elle renvoie false.
+// Le symbole ? est utilisé pour séparer la condition de la valeur qui sera attribuée à la variable $identifiant en cas de condition vraie.
+// Si la fonction isset($_POST['identifiant']) renvoie true, la valeur du champ "identifiant" soumis via la méthode POST sera affectée à la variable $identifiant. Dans ce cas, la première partie de l'expression ternaire est exécutée : $_POST['identifiant'].
+// Si la fonction isset($_POST['identifiant']) renvoie false, une chaîne de caractères vide sera affectée à la variable $identifiant. Dans ce cas, la deuxième partie de l'expression ternaire est exécutée : ''.
+// En résumé, cette ligne de code affecte la valeur soumise du champ de formulaire "identifiant" à la variable $identifiant si le champ a été soumis via la méthode POST, sinon une chaîne de caractères vide est affectée à la variable $identifiant. Cela permet de s'assurer que la variable $identifiant contient toujours une valeur, même si aucun champ "identifiant" n'a été soumis dans le formulaire.
+
+
+
+
 
 
 

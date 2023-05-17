@@ -16,7 +16,7 @@
         <div class="row g-0">
 
             <div class="col-md-5">
-                <img src="\image\php.png" alt="logo php" class="img-fluid rounded-start m-3">
+                <a href="index.php"><img src="\image\php.png" alt="logo php" class="img-fluid rounded-start m-3"></a>
             </div>
 
 
